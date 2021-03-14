@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LnuCampaignWebApp", "LnuCampaignWebApp\LnuCampaignWebApp.csproj", "{CBF198F9-A01C-42BA-8860-10D8ED534F56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LnuCampaignDAL", "LnuCampaignDAL\LnuCampaignDAL.csproj", "{239AB760-D9C0-49CA-AD76-AD0436E3ED5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LnuCampaignDAL", "LnuCampaignDAL\LnuCampaignDAL.csproj", "{239AB760-D9C0-49CA-AD76-AD0436E3ED5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LnuCampaignBLL", "LnuCampaignBLL\LnuCampaignBLL.csproj", "{CD2BCB7E-1A93-46A9-9BF8-87D52E5E915B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LnuCampaignBLL", "LnuCampaignBLL\LnuCampaignBLL.csproj", "{CD2BCB7E-1A93-46A9-9BF8-87D52E5E915B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LnuCampaignTests", "LnuCampaignTests\LnuCampaignTests.csproj", "{3F247BB6-8999-43EA-8136-E69032A206D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{CD2BCB7E-1A93-46A9-9BF8-87D52E5E915B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD2BCB7E-1A93-46A9-9BF8-87D52E5E915B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD2BCB7E-1A93-46A9-9BF8-87D52E5E915B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F247BB6-8999-43EA-8136-E69032A206D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F247BB6-8999-43EA-8136-E69032A206D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F247BB6-8999-43EA-8136-E69032A206D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F247BB6-8999-43EA-8136-E69032A206D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
