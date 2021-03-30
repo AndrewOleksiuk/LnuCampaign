@@ -11,10 +11,8 @@ namespace LnuCampaign.Core.Data.Entities
     public class User : IdentityUser<Guid>, IBaseEntity<Guid>, IIdentifiable<Guid>, ISaveTrackable, IInactivebleAt
     {
         public bool? IsSystemAdmin { get; set; }
-        [Required]
         [StringLength(128)]
         public string FirstName { get; set; }
-        [Required]
         [StringLength(128)]
         public string LastName { get; set; }
         [Column(TypeName = "datetime2", Order = 101)]
