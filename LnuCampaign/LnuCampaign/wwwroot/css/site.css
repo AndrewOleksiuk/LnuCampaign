@@ -1,6 +1,19 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+.bg {
+    height: 100vh;
+    min-height: 500px;
+    background-image: url('../lnu_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
