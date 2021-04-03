@@ -1,10 +1,9 @@
 ﻿using System.Threading.Tasks;
 using AutoMapper;
-using Microsoft.AspNetCore.Identity;
 using LnuCampaign.Core.Data.Dto;
 using LnuCampaign.Core.Data.Entities;
-using LnuCampaign.Core.Interfaces.DataAccess;
 using LnuCampaign.Core.Interfaces.Services;
+using Microsoft.AspNetCore.Identity;
 
 namespace LnuCampaign.BLL
 {
