@@ -27,6 +27,9 @@ namespace LnuCampaign.DAL
         public new DbSet<User> Users { get; set; }
         public new DbSet<Role> Roles { get; set; }
 
+        public DbSet<ZnoCertificate> ZnoCertificates { get; set; }
+        public DbSet<Subject> Subjects { get; set; }
+
         public new EntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class
         {
             return base.Entry(entity);
@@ -35,6 +38,15 @@ namespace LnuCampaign.DAL
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Subject>().ToTable("Subjects");
+            modelBuilder.Entity<Subject>().Property(e => e.Id).HasColumnName("id");
+            modelBuilder.Entity<Subject>().Property(e => e.Name).HasColumnName("name");
+
+            modelBuilder.Entity<ZnoCertificate>().ToTable("ZnoCertificates");
+            modelBuilder.Entity<ZnoCertificate>().Property(e => e.Id).HasColumnName("id");
+            modelBuilder.Entity<ZnoCertificate>().Property(e => e.Mark).HasColumnName("mark");
+            modelBuilder.Entity<ZnoCertificate>().Property(e => e.SubjectId).HasColumnName("subject_id");
 
             SeedData(modelBuilder);
 

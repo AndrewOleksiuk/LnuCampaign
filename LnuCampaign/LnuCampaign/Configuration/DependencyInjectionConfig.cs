@@ -23,11 +23,13 @@ namespace LnuCampaign.Configuration
         {
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
+            // Repositories
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
+
             // BLL
             services.AddScoped<IAuthService, AuthService>();
-
-            // Repositories
-            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddScoped<IProfileService, ProfileService>();
         }
     }
 }
