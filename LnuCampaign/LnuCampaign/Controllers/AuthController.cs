@@ -4,6 +4,9 @@ using LnuCampaign.Core.Interfaces.Services;
 using LnuCampaign.Core.Configuration;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Serilog.Core;
+using LnuCampaign.Configuration;
+using System;
 
 namespace LnuCampaign.Controllers
 {
@@ -11,9 +14,12 @@ namespace LnuCampaign.Controllers
     public class AuthController : Controller
     {
         private IAuthService _authService;
+        private readonly Logger _logger;
+
         public AuthController(IAuthService authService)
         {
             _authService = authService;
+            _logger = LoggerConfig.ConfigureLogger();
         }
 
         [HttpGet]
@@ -29,7 +35,10 @@ namespace LnuCampaign.Controllers
             if (ModelState.IsValid)
             {
                 model.Role = Roles.User;
-                var resultOfCreation = await _authService.CreateUserAsync(model);
+                try
+                {
+                    var resultOfCreation = await _authService.CreateUserAsync(model);
+                
                 if (resultOfCreation.Succeeded)
                 {
                     var resultOfSignIn = await _authService.SignInAsync(new LoginDto()
@@ -40,10 +49,16 @@ namespace LnuCampaign.Controllers
                     }
 
                 }
+                }
+                catch (Exception e)
+                {
+                    _logger.Error(e.Message);
+                }
 
                 ModelState.AddModelError("", "Invalid login or password");
             }
             return View(model);
+
         }
 
         [HttpGet]
